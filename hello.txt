@@ -1,4 +1,7 @@
 개발자 : 서진우
+<<<<<<< Updated upstream
 개발자 : 오혜광
 개발자 : 이민석
+=======
+>>>>>>> Stashed changes
 개발자 : 이우민
