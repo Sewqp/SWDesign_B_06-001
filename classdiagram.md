@@ -1,4 +1,3 @@
-```mermaid
 classDiagram
     class 고객정보 {
         -주민번호 String
@@ -35,17 +34,12 @@ classDiagram
         +연체확인(상환일 int) boolean
     }
 
-    class HouseRoanUI {
+    class HouseLoanUI {
         +대출메뉴() boolean
         +상환메뉴() boolean
     }
 
-    %% 연관 관계 및 다중성 설정
-    %% 대출정보(0..)  고객정보(1)
-    대출정보 0.. -- 1 고객정보  고객조회 목적으로 참조
-    
-    %% 대출정보(1)  주택정보(1)
-    대출정보 1 -- 1 주택정보  주택정보조회 목적으로 참조
-
-    %% 의존 관계 설정
-    HouseLoanUI .. 대출정보  의존
+    %% 관계 설정 (수정된 부분)
+    대출정보 "0..*" -- "1" 고객정보 : 고객조회
+    대출정보 "1" -- "1" 주택정보 : 주택정보조회
+    HouseLoanUI ..> 대출정보 : 의존
